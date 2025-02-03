@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second</title>
+
+    <style>
+body{
+    background-color:#86A788;
+}
+h1,h2 {
+    text-align:center;
+}
+
+div{
+    background-color:#86A788;
+    width: 90%;
+    height:250px;
+    margin: 20px;
+    font-size: 20px;
+
+}
+.submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 40%;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Tomorrow's Meal Plan:</h1>
+    <h2>Breakfast:</h2>
+
+ <div id="breakfast"></div>
+
+    <h2>Lunch:</h2>
+
+   <div id="lunch"></div>
+
+    <h2>Dinner:</h2>
+   <div id="dinner"></div>
+   
+   <a href="index.html"><button class="submit-button">Back to Home Page</button></a>
+     <script>
+          window.onload = function() {
+            // Retrieve the meal plan data from localStorage
+            var breakfast = localStorage.getItem('breakfast');
+            var lunch = localStorage.getItem('lunch');
+            var dinner = localStorage.getItem('dinner');
+
+            // If no meal plan was entered, provide default text
+            if (!breakfast) breakfast = "No breakfast plan entered.";
+            if (!lunch) lunch = "No lunch plan entered.";
+            if (!dinner) dinner = "No dinner plan entered.";
+
+            // Display the meal plan data in the respective divs
+            document.getElementById('breakfast').textContent = breakfast;
+            document.getElementById('lunch').textContent = lunch;
+            document.getElementById('dinner').textContent = dinner;
+        }
+     </script>
+</body>
+</html>
